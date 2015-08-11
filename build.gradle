@@ -12,11 +12,11 @@ repositories {
 
 dependencies {
     compile group: 'org.apache.cassandra', name: 'cassandra-all', version: cassandra_version
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile 'com.amazonaws:aws-java-sdk:1.8.7'
+    compile 'org.apache.commons:commons-compress:1.8'
 }
 
 task run(type:JavaExec) {
     main = 'bulkload.BulkLoad'
     classpath = sourceSets.main.runtimeClasspath
-    args 'ORCL','YHOO','GOOG'
 }
